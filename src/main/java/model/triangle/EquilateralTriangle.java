@@ -10,4 +10,9 @@ public class EquilateralTriangle  extends IsoscelesTriangle{
     public String getInfo() {
         return name + " со стороной " + firstSide;
     }
+
+    @Override
+    public double getSquare() {
+        return Math.sqrt(3)/4*Math.pow(firstSide, 2);
+    }
 }

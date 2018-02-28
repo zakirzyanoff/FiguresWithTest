@@ -34,6 +34,11 @@ public class Triangle extends FigureBase {
         return name +" со сторонами " + firstSide + ", " + secondSide + ", "+ thirdSide;
     }
 
+    @Override
+    public double getSquare() {
+        double halfPerimeter = getPerimeter()/2;
+        return Math.sqrt(halfPerimeter*(halfPerimeter-firstSide)*(halfPerimeter-secondSide)*(halfPerimeter-thirdSide));
+    }
 
 
 }

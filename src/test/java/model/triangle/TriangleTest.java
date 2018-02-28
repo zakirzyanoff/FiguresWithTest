@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 
 public class TriangleTest {
 
-    Triangle triangle;
+    protected Triangle triangle;
 
     @Before
     public void setUp() throws Exception{
@@ -15,10 +15,14 @@ public class TriangleTest {
     }
 
     @Test
-    public void constructurSuccessTest(){
+    public void constructorSuccessTest(){
         assertNotNull(triangle);
     }
 
+    @Test(expected = java.lang.IllegalArgumentException.class)
+    public void constructorErrorTest(){
+        new Triangle(1,2,3);
+    }
 
     @Test(expected = java.lang.IllegalArgumentException.class)
     public void constructorTest(){
@@ -26,12 +30,17 @@ public class TriangleTest {
     }
 
     @Test
-    public void getPerimeter() {
-        assertEquals(12,triangle.getPerimeter(),0);
+    public void getPerimeterTest() {
+        assertEquals(9.0,triangle.getPerimeter(),0);
     }
 
     @Test
-    public void getInfo() {
+    public void getInfoTest() {
         assertEquals("Треугольник со сторонами 3.0, 4.0, 5.0", triangle.getInfo());
+    }
+
+    @Test
+    public void getSquareTest(){
+        assertEquals(2.9047375096555625, triangle.getPerimeter(),0);
     }
 }
